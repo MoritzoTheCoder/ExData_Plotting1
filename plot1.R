@@ -15,5 +15,8 @@ head(data.subset, 10)
 tail(data.subset, 10)
 
 ## PLOT1
+png("plot1.png", width = 480, height = 480, res = 72)
 #Create Plot
 plot1 <- hist(data.subset$Global_active_power, main="Global Active Power", xlab="Global Active Power (killowatts)", col="red")
+
+dev.off()

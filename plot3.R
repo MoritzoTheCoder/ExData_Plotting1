@@ -14,6 +14,7 @@ data.subset <- subset(data,Date == "1/2/2007" | Date == "2/2/2007")
 
 
 ## PLOT 3
+png("plot3.png", width = 480, height = 480, res = 72)
 #Create an empty Plot
 plot(data.subset$DateTime, data.subset$Sub_metering_1, type="n", main="Plot 3", xlab="", ylab="Energy submetering")
 legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = c("black", "red", "blue"), lty = 1)
@@ -21,3 +22,5 @@ legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = 
 lines(data.subset$DateTime, data.subset$Sub_metering_1, type="l")
 lines(data.subset$DateTime, data.subset$Sub_metering_2, type="l", col="red")
 lines(data.subset$DateTime, data.subset$Sub_metering_3, type="l", col="blue")
+
+dev.off()

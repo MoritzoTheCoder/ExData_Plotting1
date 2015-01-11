@@ -13,6 +13,7 @@ data$DateTime <- as.POSIXct(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:
 data.subset <- subset(data,Date == "1/2/2007" | Date == "2/2/2007")
 
 ## PLOT 4
+png("plot4.png", width = 480, height = 480, res = 72)
 # 2x2 grid to put in the following graphs linewise
 par(mfrow = c(2, 2))
 #upper left graph
@@ -30,3 +31,5 @@ lines(data.subset$DateTime, data.subset$Sub_metering_3, type="l", col="blue")
 #lower right graph
 plot(data.subset$DateTime, data.subset$Global_reactive_power, type="n", xlab="datetime", ylab="Global_reactive_power")
 lines(data.subset$DateTime, data.subset$Global_reactive_power, type="l")
+
+dev.off()
